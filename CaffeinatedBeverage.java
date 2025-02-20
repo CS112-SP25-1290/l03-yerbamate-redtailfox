@@ -56,6 +56,7 @@ public class CaffeinatedBeverage
     }
 
     //Create toString method Format: "Caffeinated Beverage: (name), (ounces), $(price)" 
+    
 
     @Override
     public boolean equals(Object o) {
@@ -68,7 +69,7 @@ public class CaffeinatedBeverage
     }
     @Override
     public String toString() {
-        return String.format("caffeinated Beverage: name %s,  %d.  ");
+        return String.format("CaffeinatedBeverage: name = %s, %d fl. oz., $%.2f", this.name, this.ounces, this.price);
     }
 
     public boolean sip(int sipAmount)
