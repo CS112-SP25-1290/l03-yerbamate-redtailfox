@@ -44,6 +44,7 @@ public class CaffeinatedBeverage
         return this.ounces;
     }
     //Change setOunces so that it validates the parameter value
+<<<<<<< HEAD
     public boolean setOunces(int ounces) 
     {
         if(ounces >= 0)
@@ -56,6 +57,15 @@ public class CaffeinatedBeverage
             return false;
         }
         
+=======
+    public boolean setOunces(int ounces) {
+        if (ounces >= 0) {
+            this.ounces = ounces;
+            return true;
+        } else {
+            return false;
+        }
+>>>>>>> origin/HEAD
     }
 
     public double getPrice() {
@@ -72,6 +82,7 @@ public class CaffeinatedBeverage
     }
 
     //Create a setAll method
+<<<<<<< HEAD
     public boolean setAll(String name, int ounces, double price) 
     {
         if (this.setOunces(ounces) && this.setPrice(price))
@@ -86,9 +97,14 @@ public class CaffeinatedBeverage
         {
             return false;
         }
+=======
+    public boolean setAll(String name, int ounces, double price) {
+        return this.setName(name) && this.setOunces(ounces) && this.setPrice(price);
+>>>>>>> origin/HEAD
     }
 
     //Create toString method Format: "Caffeinated Beverage: (name), (ounces), $(price)" 
+    
 
     @Override
     public boolean equals(Object o) {
@@ -101,9 +117,14 @@ public class CaffeinatedBeverage
     }
     
     @Override
+<<<<<<< HEAD
     public String toString() 
     {
         return String.format("Caffeinated Beverage: %s, %d ounces, $%.2f", this.name, this.ounces, this.price);
+=======
+    public String toString() {
+        return String.format("CaffeinatedBeverage: name = %s, %d fl. oz., $%.2f", this.name, this.ounces, this.price);
+>>>>>>> origin/HEAD
     }
 
     public boolean sip(int sipAmount)
