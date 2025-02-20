@@ -1,39 +1,14 @@
 public class CaffeinatedBeverage
 {
-    protected String name;
-    protected int ounces;
-    protected double price;
-
-
-    public CaffeinatedBeverage()
-    {
-        name = null;
-        ounces = 0;
-        price = 0;
-
-    }
-
+    private String name;
+    private int ounces;
+    private double price;
 
     public CaffeinatedBeverage(String name, int ounces, double price) 
     {
         this.name = name;
         this.ounces = ounces;
         this.price = price;
-    }
-
-    public CaffeinatedBeverage(CaffeinatedBeverage Original)
-    {
-        if(Original != null) 
-        {
-            this.name = Original.name;
-            this.ounces = Original.ounces;
-            this.price = Original.price; 
-        }
-        else
-        {
-            System.out.println("ERROR");
-            System.exit(0);
-        }
     }
 
     public String getName() {
@@ -62,40 +37,32 @@ public class CaffeinatedBeverage
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || this.getClass() != o.getClass()) return false;
+        if (o == null || this.getClass() != o.getClass())
+            return false;
         CaffeinatedBeverage that = (CaffeinatedBeverage) o;
         return this.ounces == that.ounces &&
-                Double.compare(this.price, that.price) == 0 && this.name.equals(that.name);
+                Double.compare(this.price, that.price) == 0 &&
+               this.name.equals(that.name);
+    }
+    @Override
+    public String toString() {
+        return String.format("caffeinated Beverage: name %s,  %d.  ");
     }
 
-    //Special methods
-    /**
-     * The sip amount is subtracted from the amount of ounces in the CaffeintedBeverage object,
-     * if the sip amount is less than or equal to the amount of ounces
-     * @param sipAmount the amount of ounces that were sipped from beverage
-     * @return boolean if there is enough ounces in CaffeinatedBeverage to be sipped or not
-     */
     public boolean sip(int sipAmount)
     {
         boolean isValid = false;
-        if(sipAmount <= this.ounces) 
-        {
+        if (sipAmount <= this.ounces) {
             this.ounces -= sipAmount;
             if (ounces != 0) {
                 isValid = true;
             }
-        } 
-        else 
-        {
+        } else {
             isValid = false;
         }
 
         return isValid;
     }
-    /**
-     * Checks if the CaffeinatedBevarage object is empty (0 ounces)
-     * @return boolean if object is empty or not
-     */
     public boolean isEmpty()
     {
         boolean isValid = false;

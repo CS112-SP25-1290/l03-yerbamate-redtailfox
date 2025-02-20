@@ -51,4 +51,6 @@ public class Tea extends CaffeinatedBeverage {
             return super.equals(otherTea) && this.brewTemp == otherTea.brewTemp;
         }
     }
+public class Tea {
+    
 }
