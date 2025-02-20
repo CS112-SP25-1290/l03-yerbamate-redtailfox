@@ -4,6 +4,7 @@ public class CaffeinatedBeverage
     protected int ounces;
     protected double price;
 
+<<<<<<< HEAD
     public CaffeinatedBeverage()
     {
         this.name = null;
@@ -11,10 +12,30 @@ public class CaffeinatedBeverage
         this.price = 0.0;
     }
     
+=======
+    public CaffeinatedBeverage() {
+        name = null;
+        ounces = 0;
+        price = 0;
+
+    }
+
+>>>>>>> origin/main
     public CaffeinatedBeverage(String name, int ounces, double price) {
         this.name = name;
         this.ounces = ounces;
         this.price = price;
+    }
+
+    public CaffeinatedBeverage(CaffeinatedBeverage Original)
+
+    {
+        if (Original != null) {
+            this.name = Original.name;
+            this.ounces = Original.ounces;
+            this.price = Original.price; 
+        }
+        
     }
 
     public String getName() {
