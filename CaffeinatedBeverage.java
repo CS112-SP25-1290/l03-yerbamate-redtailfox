@@ -14,7 +14,7 @@ public class CaffeinatedBeverage
     public String getName() {
         return this.name;
     }
-
+    
     public void setName(String name) {
         this.name = name;
     }
@@ -22,7 +22,7 @@ public class CaffeinatedBeverage
     public int getOunces() {
         return this.ounces;
     }
-
+    //Change setOunces so that it validates the parameter value
     public void setOunces(int ounces) {
         this.ounces = ounces;
     }
@@ -30,10 +30,15 @@ public class CaffeinatedBeverage
     public double getPrice() {
         return this.price;
     }
-
-    public void setPrice(double price) {
+    //Change setPrice so that it validates the parameter value
+    public void setPrice(double price) 
+    {
         this.price = price;
     }
+
+    //Create a setAll method
+
+    //Create toString method Format: "Caffeinated Beverage: (name), (ounces), $(price)" 
 
     @Override
     public boolean equals(Object o) {
