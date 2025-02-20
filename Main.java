@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Main
 {
 	public static void main(String[] args)
-  	{
+	{
+		/* 
 		CaffeinatedBeverage[] inventory = new CaffeinatedBeverage[10];
 		Scanner keyboard = new Scanner(System.in);
 		// Prompt user with options in a loop
@@ -40,6 +41,6 @@ public class Main
 			
 			}
 
-		} while (choice != 3);
+		} while (choice != 3);*/
 	}
 }
