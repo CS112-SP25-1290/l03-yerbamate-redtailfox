@@ -4,38 +4,36 @@ public class CaffeinatedBeverage
     protected int ounces;
     protected double price;
 
-<<<<<<< HEAD
+
     public CaffeinatedBeverage()
     {
-        this.name = null;
-        this.ounces = 0;
-        this.price = 0.0;
-    }
-    
-=======
-    public CaffeinatedBeverage() {
         name = null;
         ounces = 0;
         price = 0;
 
     }
 
->>>>>>> origin/main
-    public CaffeinatedBeverage(String name, int ounces, double price) {
+
+    public CaffeinatedBeverage(String name, int ounces, double price) 
+    {
         this.name = name;
         this.ounces = ounces;
         this.price = price;
     }
 
     public CaffeinatedBeverage(CaffeinatedBeverage Original)
-
     {
-        if (Original != null) {
+        if(Original != null) 
+        {
             this.name = Original.name;
             this.ounces = Original.ounces;
             this.price = Original.price; 
         }
-        
+        else
+        {
+            System.out.println("ERROR");
+            System.exit(0);
+        }
     }
 
     public String getName() {

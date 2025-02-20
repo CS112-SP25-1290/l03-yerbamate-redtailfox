@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-public class Tea extends CaffeinatedBeverage 
-{
+public class Tea extends CaffeinatedBeverage {
     protected int brewTemp;
-    
-    public Tea()
+
+    public Tea() 
     {
         super();
         this.brewTemp = 0;
@@ -16,7 +14,7 @@ public class Tea extends CaffeinatedBeverage
     }
 
     //Ideal tea temp ranges from 65-100 degrees celsius
-    public boolean setBrewTemp(int brewTemp)
+    public boolean setBrewTemp(int brewTemp) 
     {
         boolean isValid = false;
         if (brewTemp >= 65 && brewTemp <= 100) {
@@ -27,22 +25,22 @@ public class Tea extends CaffeinatedBeverage
         }
         return isValid;
     }
-    
-    public int getBrewTemp()
+
+    public int getBrewTemp() 
     {
         return this.brewTemp;
     }
 
     @Override
-    public String toString()
+    public String toString() 
     {
         String output = String.format("Tea: %s, %d ounces, brewed @ %d°C, $%.2f", super.name, super.ounces,
                 this.brewTemp, super.price);
         return output;
     }
-    
+
     @Override
-    public boolean equals(Object other)
+    public boolean equals(Object other) 
     {
         if (other == null) {
             return false;
@@ -53,8 +51,4 @@ public class Tea extends CaffeinatedBeverage
             return super.equals(otherTea) && this.brewTemp == otherTea.brewTemp;
         }
     }
-=======
-public class Tea {
->>>>>>> origin/main
-    
 }
