@@ -15,28 +15,45 @@ public class CaffeinatedBeverage
         return this.name;
     }
     
-    public void setName(String name) {
-        this.name = name;
+    public boolean setName(String name) {
+        if (name != null && name.length() > 0) {
+            this.name = name;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int getOunces() {
         return this.ounces;
     }
     //Change setOunces so that it validates the parameter value
-    public void setOunces(int ounces) {
-        this.ounces = ounces;
+    public boolean setOunces(int ounces) {
+        if (ounces >= 0) {
+            this.ounces = ounces;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public double getPrice() {
         return this.price;
     }
     //Change setPrice so that it validates the parameter value
-    public void setPrice(double price) 
-    {
-        this.price = price;
+    public boolean setPrice(double price) {
+        if (price >= 0) {
+            this.price = price;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //Create a setAll method
+    public boolean setAll(String name, int ounces, double price) {
+        return this.setName(name) && this.setOunces(ounces) && this.setPrice(price);
+    }
 
     //Create toString method Format: "Caffeinated Beverage: (name), (ounces), $(price)" 
 
