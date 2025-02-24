@@ -1,3 +1,3 @@
-public class YerbaMate {
-    
+public class YerbaMate extends Tea {
+    private int numPasses;
 }
