@@ -66,7 +66,7 @@ public class Main
 			}
 
 		} while (choice != 3);
-		keyboard.close;
+		keyboard.close();
 	}
 
 	public static void printDrinks(CaffeinatedBeverage[] drinks, int numDrinks) {
