@@ -12,6 +12,12 @@ public class CaffeinatedBeverage
 
 
 
+    public CaffeinatedBeverage()
+    {
+        this.name = null;
+        this.ounces = 0;
+        this.price = 0;
+    }
     public CaffeinatedBeverage(String name, int ounces, double price) 
     {
         if (this.setAll(name, ounces, price)) {
@@ -78,40 +84,99 @@ public class CaffeinatedBeverage
         return this.name;
     }
     
-    /**
-     * Get number of fluid ounces in container
-     * 
-     * @return number of fluid ounces that is present in beverage container 
-     */
-
+    public boolean setName(String name) {
+        if (name != null && name.length() > 0) {
+            this.name = name;
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public int getOunces() {
         return this.ounces;
     }
-
-    /**
-     * get price of the beverage 
-     * 
-     * @return price of the beverage, either purchased or material cost 
-     */
-
+    //Change setOunces so that it validates the parameter value
+<<<<<<< HEAD
+    public boolean setOunces(int ounces) 
+    {
+        if(ounces >= 0)
+        {
+            this.ounces = ounces;
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+        
+=======
+    public boolean setOunces(int ounces) {
+        if (ounces >= 0) {
+            this.ounces = ounces;
+            return true;
+        } else {
+            return false;
+        }
+>>>>>>> origin/HEAD
+    }
 
     public double getPrice() {
         return this.price;
     }
+    //Change setPrice so that it validates the parameter value
+    public boolean setPrice(double price) {
+        if (price >= 0) {
+            this.price = price;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Create a setAll method
+<<<<<<< HEAD
+    public boolean setAll(String name, int ounces, double price) 
+    {
+        if (this.setOunces(ounces) && this.setPrice(price))
+        {
+            this.setName(name);
+            this.setOunces(ounces);
+            this.setPrice(price);
+            return true;
+
+        }
+        else 
+        {
+            return false;
+        }
+=======
+    public boolean setAll(String name, int ounces, double price) {
+        return this.setName(name) && this.setOunces(ounces) && this.setPrice(price);
+>>>>>>> origin/HEAD
+    }
+
+    //Create toString method Format: "Caffeinated Beverage: (name), (ounces), $(price)" 
+    
 
     @Override
     public boolean equals(Object other) {
         if (other == null || other instanceof CaffeinatedBeverage) {
             return false;
-        }
-        CaffeinatedBeverage otherCaffeine = (CaffeinatedBeverage) other;
-        return this.ounces == otherCaffeine.ounces &&  Double.compare(this.price, otherCaffeine.price) == 0 && this.name.equals(otherCaffeine.name);
-        
+        CaffeinatedBeverage that = (CaffeinatedBeverage) o;
+        return this.ounces == that.ounces &&
+                Double.compare(this.price, that.price) == 0 &&
+               this.name.equals(that.name);
     }
+    
     @Override
+<<<<<<< HEAD
+    public String toString() 
+    {
+        return String.format("Caffeinated Beverage: %s, %d ounces, $%.2f", this.name, this.ounces, this.price);
+=======
     public String toString() {
-        return String.format("CaffeinatedBeverage: name = %s, %d fl. oz., $%.2f", this.name, this.ounces, this.price);    
+        return String.format("caffeinated Beverage: name %s,  %d.  ");
     }
 
     public boolean sip(int sipAmount)
